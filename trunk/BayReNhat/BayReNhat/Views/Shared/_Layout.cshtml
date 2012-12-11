@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Airplane-icon.jpg" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @RenderSection("head", false)
+</head>
+<body>
+    <header>
+			<div class="content-wrapper">
+				<div class="float-left">
+					<a href="@Url.Action("Index", "Home")">
+						<img src="../../Images/logo.png"/>
+						<span id="logo-title">Bay Rẻ Nhất </span>
+					</a>
+				</div>
+				<div class="float-right">
+					<nav>
+						<ul id="menu">
+							<li>@Html.ActionLink("Trang chủ", "Index", "Home")</li>
+							<li>@Html.ActionLink("Hướng dẫn", "About", "Home")</li>
+							<li>@Html.ActionLink("Liên lạc", "Contact", "Home")</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+    <div id="titlebar">
+        <h1 class="content-wrapper">@ViewBag.TitleBar</h1>
+    </div>
+    <div id="body" class="content-wrapper">
+        @RenderBody()
+    </div>
+    <footer>
+			<div class="float-left">
+				<p>&copy; @DateTime.Now.Year - Bay Rẻ Nhất</p>
+			</div>
+		</footer>
+</body>
+</html>
