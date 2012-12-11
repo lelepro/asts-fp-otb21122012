@@ -1,0 +1,94 @@
+﻿body {
+	background-color: white;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	font-family: "Segoe UI", Arial;
+	font-size: 16px;
+}
+.float-left {
+	float: left;
+}
+.float-right {
+	float: right;
+}
+.content-wrapper {
+	margin: 0 auto;
+	width: 960px;
+}
+/* header */
+header {
+	height: 50px;
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0, #005490),color-stop(1, #006BAD));
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+#titlebar {
+	background-color: #DBDBDB;
+	height: 100px;
+	border-bottom: 3px solid #CACACA;
+	clear: left;
+}
+#titlebar h1 {
+	padding: 20px 20px 0 0;
+	font-size: 36px;
+	font-weight: normal;
+	position: relative;
+	text-shadow: 0px 1px 2px #2E2E2E;
+	color: black;
+}
+#menu {
+	position: relative;
+	top: 20px;
+}
+#logo-title {
+	text-transform: uppercase;
+	font-weight: bold;
+	position: relative;
+	bottom: 5px;
+}
+ul#menu {
+	font-size: 1.3em;
+	font-weight: 600;
+	margin: 0 0 5px;
+	padding: 0;
+	text-align: right;
+}
+ul#menu li {
+	display: inline;
+	list-style: none;
+	padding-left: 15px;
+}
+ul#menu li a:hover {
+	color: #003358;
+	text-decoration: none;
+}
+header a{
+	color: white;
+	text-decoration: none;
+	cursor: auto;
+}
+/*h*/
+h1 {
+	color: #005490;
+	font-size: 2em;
+}
+/*Contact*/
+.member {
+	float: right;
+	width: 90%;
+}
+.member article {
+	clear: both;
+}
+.avatar {
+	width: 30%;
+	float: left;
+	height: 100px;
+}
+.information {
+	float: left;
+}
