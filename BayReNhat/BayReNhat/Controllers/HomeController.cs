@@ -20,6 +20,7 @@ namespace BayReNhat.Controllers
 
         public ActionResult Contact()
         {
+            int x = 10;
             return View();
         }
     }
