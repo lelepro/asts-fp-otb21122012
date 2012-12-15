@@ -1,77 +1,40 @@
-[
-  {
-    "BookingType": "oneway",
-    "Data": [
-      {
-        "DepartCity": "HAN",
-        "ReturnCity": "VII",
-        "Flights": [
-          {
-            "AirlineName": "Vietnam Airline",
-            "FlightNo": "VN 1713",
-            "StartTime": "15:50",
-            "EndTime": "16:50",
-            "Price": "924.000 VND"
-          },
-          {
-            "AirlineName": "Vietnam Airline",
-            "FlightNo": "VN 1711",
-            "StartTime": "09:00",
-            "EndTime": "10:00",
-            "Price": "924.000 VND"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "BookingType": "oneway",
-    "Data": [
-      {
-        "DepartCity": "HAN",
-        "ReturnCity": "VII",
-        "Flights": [
-          {
-            "AirlineName": "Jetstar",
-            "FlightNo": "VN 1713",
-            "StartTime": "15:50",
-            "EndTime": "16:50",
-            "Price": "924.000 VND"
-          },
-          {
-            "AirlineName": "Jetstar",
-            "FlightNo": "VN 1711",
-            "StartTime": "09:00",
-            "EndTime": "10:00",
-            "Price": "924.000 VND"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "BookingType": "oneway",
-    "Data": [
-      {
-        "DepartCity": "HAN",
-        "ReturnCity": "VII",
-        "Flights": [
-          {
-            "AirlineName": "Mekong Air",
-            "FlightNo": "VN 1713",
-            "StartTime": "15:50",
-            "EndTime": "16:50",
-            "Price": "924.000 VND"
-          },
-          {
-            "AirlineName": "Mekong Air",
-            "FlightNo": "VN 1711",
-            "StartTime": "09:00",
-            "EndTime": "10:00",
-            "Price": "924.000 VND"
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "BookingType": "oneway",
+  "Data": [
+    {
+      "DepartCity": "HAN",
+      "ReturnCity": "VII",
+      "Flights": [
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1713",
+          "StartTime": "15:50",
+          "EndTime": "16:50",
+          "Price": "924.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1711",
+          "StartTime": "09:00",
+          "EndTime": "10:00",
+          "Price": "924.000 VND"
+        },
+        {
+          "AirlineName": "Jetstar",
+          "FlightNo": "VN 1713",
+          "StartTime": "15:50",
+          "EndTime": "16:50",
+          "Price": "924.000 VND"
+        },
+        {
+          "AirlineName": "Jetstar",
+          "FlightNo": "VN 1711",
+          "StartTime": "09:00",
+          "EndTime": "10:00",
+          "Price": "924.000 VND"
+        }
+      ]
+    }
+  ]
+}
+Press any key to continue . . .
