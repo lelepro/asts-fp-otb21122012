@@ -2,6 +2,10 @@
 	init();
 	registerdlg("#dlgCity", "#departcity");
 	registerdlg("#dlgCity", "#returncity");
+	hintTextbox("#departcity", "Bạn đi từ đâu");
+	hintTextbox("#returncity", "Bạn muốn đến đâu");
+	hintTextbox("#departday", "Ngày nào bạn đi");
+	hintTextbox("#returnday", "Ngày nào bạn về");
 });
 
 function init() {
@@ -41,5 +45,24 @@ function registerdlg(dlgId, targetId) {
 	});
 	$(targetId).blur(function () {
 		$(dlgId).dialog("close");
+	});
+}
+
+function hintTextbox(textboxId, hint) {
+	var textbox = $(textboxId);
+	textbox.val(hint);
+	textbox.css("color", "gray");
+	
+	textbox.click(function() {
+		if (textbox.val() == hint) {
+			textbox.val("");
+			textbox.css("color", "");
+		}
+	});
+	textbox.change(function() {
+		if (textbox.val() == "") {
+			textbox.val(hint);
+			textbox.css("color", "gray");
+		}
 	});
 }
