@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>lib\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
@@ -173,6 +176,30 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\FlightSearchModel.cs" />
+    <Compile Include="Models\Flights\AirlineInfoFactory.cs" />
+    <Compile Include="Models\Flights\AirMekongDelegate.cs" />
+    <Compile Include="Models\Flights\AirMekongWebSraping.cs" />
+    <Compile Include="Models\Flights\Flight.cs" />
+    <Compile Include="Models\Flights\IWebScrapingDelegate.cs" />
+    <Compile Include="Models\Flights\JestaDelegate.cs" />
+    <Compile Include="Models\Flights\JestaWebScraping.cs" />
+    <Compile Include="Models\Flights\OneWayAirMekongDelegate.cs" />
+    <Compile Include="Models\Flights\OnewayJestaDelegate.cs" />
+    <Compile Include="Models\Flights\OnewayVNAirlineDelegate.cs" />
+    <Compile Include="Models\Flights\Parameters.cs" />
+    <Compile Include="Models\Flights\Program.cs" />
+    <Compile Include="Models\Flights\ReturnData.cs" />
+    <Compile Include="Models\Flights\RoundTripAirMekongDelegate.cs" />
+    <Compile Include="Models\Flights\RoundTripJestaDelegate.cs" />
+    <Compile Include="Models\Flights\RoundTripVNAirlineDelegate.cs" />
+    <Compile Include="Models\Flights\Trip.cs" />
+    <Compile Include="Models\Flights\Utilities.cs" />
+    <Compile Include="Models\Flights\VNAirlineDelegate.cs" />
+    <Compile Include="Models\Flights\VNAirlineWebScraping.cs" />
+    <Compile Include="Models\Flights\WebClientEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Models\Flights\WebScraping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
