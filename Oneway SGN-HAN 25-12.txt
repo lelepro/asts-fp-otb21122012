@@ -1,0 +1,221 @@
+{
+  "BookingType": "oneway",
+  "Data": [
+    {
+      "DepartCity": "SGN",
+      "ReturnCity": "HAN",
+      "Flights": [
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1178",
+          "StartTime": "21:55",
+          "EndTime": "23:55",
+          "Price": "1.529.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1148",
+          "StartTime": "14:00",
+          "EndTime": "16:00",
+          "Price": "1.529.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1120",
+          "StartTime": "05:30",
+          "EndTime": "07:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1126",
+          "StartTime": "08:00",
+          "EndTime": "10:00",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1132",
+          "StartTime": "08:50",
+          "EndTime": "10:50",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1174",
+          "StartTime": "20:30",
+          "EndTime": "22:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1164",
+          "StartTime": "18:30",
+          "EndTime": "20:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1158",
+          "StartTime": "17:30",
+          "EndTime": "19:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1156",
+          "StartTime": "17:00",
+          "EndTime": "19:00",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1154",
+          "StartTime": "16:30",
+          "EndTime": "18:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1152",
+          "StartTime": "16:00",
+          "EndTime": "18:00",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1150",
+          "StartTime": "15:00",
+          "EndTime": "17:00",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1144",
+          "StartTime": "13:00",
+          "EndTime": "15:00",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1140",
+          "StartTime": "12:30",
+          "EndTime": "14:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1136",
+          "StartTime": "11:30",
+          "EndTime": "13:30",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 1134",
+          "StartTime": "10:00",
+          "EndTime": "12:00",
+          "Price": "1.584.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 772",
+          "StartTime": "19:00",
+          "EndTime": "21:00",
+          "Price": "1.749.000 VND"
+        },
+        {
+          "AirlineName": "Vietnam Airline",
+          "FlightNo": "VN 512",
+          "StartTime": "06:30",
+          "EndTime": "08:30",
+          "Price": "2.464.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 790",
+          "StartTime": "6:00",
+          "EndTime": "8:10",
+          "Price": "1.150.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 794",
+          "StartTime": "7:30",
+          "EndTime": "9:40",
+          "Price": "1.150.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 808",
+          "StartTime": "8:00",
+          "EndTime": "10:10",
+          "Price": null
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 796",
+          "StartTime": "9:45",
+          "EndTime": "11:55",
+          "Price": "1.150.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 798",
+          "StartTime": "12:40",
+          "EndTime": "14:50",
+          "Price": "1.150.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 800",
+          "StartTime": "15:30",
+          "EndTime": "17:40",
+          "Price": "1.150.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 802",
+          "StartTime": "16:25",
+          "EndTime": "18:35",
+          "Price": "1.150.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 804",
+          "StartTime": "18:05",
+          "EndTime": "20:15",
+          "Price": "1.000.000 VND"
+        },
+        {
+          "AirlineName": "Jesta",
+          "FlightNo": "BL 806",
+          "StartTime": "19:35",
+          "EndTime": "21:45",
+          "Price": "1.000.000 VND"
+        },
+        {
+          "AirlineName": "Mekong Air",
+          "FlightNo": "P8-562 P8-554",
+          "StartTime": "6:45",
+          "EndTime": "13:15",
+          "Price": "1.775.000"
+        },
+        {
+          "AirlineName": "Mekong Air",
+          "FlightNo": "P8-542 P8-532",
+          "StartTime": "9:10",
+          "EndTime": "12:10",
+          "Price": "1.775.000"
+        },
+        {
+          "AirlineName": "Mekong Air",
+          "FlightNo": "P8-924",
+          "StartTime": "15:15",
+          "EndTime": "17:20",
+          "Price": "1.480.000"
+        }
+      ]
+    }
+  ]
+}
