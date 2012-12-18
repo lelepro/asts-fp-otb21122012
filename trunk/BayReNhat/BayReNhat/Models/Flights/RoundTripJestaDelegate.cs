@@ -19,6 +19,11 @@ namespace Flights
             web.DownloadFileEx(postData, fileName);
         }
 
+        public void DownloadWebPage(Parameters param, string fileName, string cookie)
+        {
+            throw new NotImplementedException();
+        }
+
         public ReturnData ParseResult(Parameters param, string fileName)
         {
             ReturnData returnData = ReturnData.CreateReturnData(param.BookingType);

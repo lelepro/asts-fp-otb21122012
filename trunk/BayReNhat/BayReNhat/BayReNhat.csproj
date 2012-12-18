@@ -180,16 +180,22 @@
     <Compile Include="Models\FlightSearchModel.cs" />
     <Compile Include="Models\Flights\AirlineInfoFactory.cs" />
     <Compile Include="Models\Flights\AirMekongDelegate.cs" />
+    <Compile Include="Models\Flights\AirMekongRegister.cs" />
     <Compile Include="Models\Flights\AirMekongWebSraping.cs" />
     <Compile Include="Models\Flights\Flight.cs" />
+    <Compile Include="Models\Flights\FlightRegister.cs" />
+    <Compile Include="Models\Flights\FlightRegisterParameters.cs" />
     <Compile Include="Models\Flights\IWebScrapingDelegate.cs" />
     <Compile Include="Models\Flights\JestaDelegate.cs" />
+    <Compile Include="Models\Flights\JestaRegister.cs" />
     <Compile Include="Models\Flights\JestaWebScraping.cs" />
     <Compile Include="Models\Flights\OneWayAirMekongDelegate.cs" />
     <Compile Include="Models\Flights\OnewayJestaDelegate.cs" />
     <Compile Include="Models\Flights\OnewayVNAirlineDelegate.cs" />
     <Compile Include="Models\Flights\Parameters.cs" />
     <Compile Include="Models\Flights\Program.cs" />
+    <Compile Include="Models\Flights\RegisterResult.cs" />
+    <Compile Include="Models\Flights\RegisterResultFactory.cs" />
     <Compile Include="Models\Flights\ReturnData.cs" />
     <Compile Include="Models\Flights\RoundTripAirMekongDelegate.cs" />
     <Compile Include="Models\Flights\RoundTripJestaDelegate.cs" />
@@ -197,6 +203,7 @@
     <Compile Include="Models\Flights\Trip.cs" />
     <Compile Include="Models\Flights\Utilities.cs" />
     <Compile Include="Models\Flights\VNAirlineDelegate.cs" />
+    <Compile Include="Models\Flights\VNAirlineRegister.cs" />
     <Compile Include="Models\Flights\VNAirlineWebScraping.cs" />
     <Compile Include="Models\Flights\WebClientEx.cs">
       <SubType>Component</SubType>

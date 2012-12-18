@@ -22,6 +22,17 @@ namespace Flights
             return webClient;
         }
 
+        public static WebClientEx CreateVNAirlineWebClient(String address)
+        {
+
+            WebClientEx webClient = new WebClientEx();
+
+            webClient.m_address = address;
+            webClient.Headers["Cookie"] = "BIGipServerprod_2.sabresonicweb_pool_4443=2231161098.23313.0000; BIGipServerprod.sabresonicweb_pool_4443=2801455114.11033.0000; __utma=60035391.1904160844.1355161353.1355739624.1355743791.19; __utmb=60035391.33.10.1355743791; __utmc=60035391; __utmz=60035391.1355743791.19.13.utmcsr=vietnamairlines.com|utmccn=(referral)|utmcmd=referral|utmcct=/wps/portal/vn/site/home";
+
+            return webClient;
+        }
+
         public static WebClientEx CreateJetstarWebClient(String address)
         {
 
