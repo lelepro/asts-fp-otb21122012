@@ -14,43 +14,50 @@ namespace Flights
         static void Main(string[] args)
         {
 
-
-            //string host = "https://booking.airmekong.com.vn/SearchInfo.aspx";
-            //string postData = "__EVENTTARGET=&__EVENTARGUMENT=&__VIEWSTATE=%2FwEPDwUBMGRk77h9CNekodLMZhdJu3riPx9ebN8%3D&pageToken=&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24RadioButtonMarketStructure=OneWay&originStation1=HAN&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24TextBoxMarketOrigin1=HAN&destinationStation1=SGN&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24TextBoxMarketDestination1=SGN&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListMarketDay1=25&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListMarketMonth1=2012-12&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListMarketDateRange1=0%7C4&originStation2=&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24TextBoxMarketOrigin2=%C4%90i%E1%BB%83m+%C4%91i...&destinationStation2=&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24TextBoxMarketDestination2=%C4%90i%E1%BB%83m+%C4%91%E1%BA%BFn...&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListMarketDay2=01&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListMarketMonth2=2013-01&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListMarketDateRange2=0%7C4&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListPassengerType_ADT=1&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListPassengerType_CHD=0&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListPassengerType_INFANT=0&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24DropDownListSearchBy=columnView&ControlGroupSearchInfoView%24AvailabilitySearchInputSearchInfoView%24ButtonSubmit=T%C3%ACm+chuy%E1%BA%BFn+bay";
-
-
-            //WebClientEx web = WebClientEx.CreateMekongAirWebClient(host);
-            //web.DownloadFileEx(postData,"D:\\xxx.html");
-
-            //string host = "http://booknow.jetstar.com/Search.aspx?culture=vi-VN";
-            //string postData =
-            //    "ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListCurrency=VND&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListFareTypes=I&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListMarketDay1=22&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListMarketDay2=1&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListMarketDay3=&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListMarketMonth1=2012-12&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListMarketMonth2=1968-1&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListMarketMonth3=&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListPassengerType_ADT=1&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListPassengerType_CHD=0&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24DropDownListPassengerType_INFANT=0&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24RadioButtonMarketStructure=OneWay&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24TextBoxMarketDestination1=SGN&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24TextBoxMarketDestination2=&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24TextBoxMarketDestination3=&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24TextBoxMarketOrigin1=HAN&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24TextBoxMarketOrigin2=&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24TextBoxMarketOrigin3=&ControlGroupSearchView%24ButtonSubmit=&__VIEWSTATE=%2FwEPDwUBMGRkuk23y%2Fc8bQS%2BtyzOftjdNwPRLxU%3D&culture=vi-VN&date_picker=&go-booking=&pageToken=sLkmnwXwAsY%3D&ControlGroupSearchView%24AvailabilitySearchInputSearchView%24fromCS=yes";
-
-
-            //WebClientEx web = WebClientEx.CreateJetstarWebClient(host);
-            //web.DownloadFileEx(postData, "D:\\xxx.html");
-
-
-            Parameters parameters = new Parameters();
-            parameters.From = "SGN";
-            parameters.To = "HAN";
-            parameters.DepartDay = "25";
-            parameters.DepartMonth = "12";
-            parameters.DepartYear = "2012";
-            parameters.ReturnDay = "30";
-            parameters.ReturnMonth = "12";
-            parameters.ReturnYear = "2012";
+            //Parameters parameters = new Parameters();
+            //parameters.From = "SGN";
+            //parameters.To = "HAN";
+            //parameters.DepartDay = "20";
+            //parameters.DepartMonth = "12";
+            //parameters.DepartYear = "2012";
+            //parameters.ReturnDay = "30";
+            //parameters.ReturnMonth = "12";
+            //parameters.ReturnYear = "2012";
             //parameters.BookingType = "roundtrip";
-            parameters.BookingType = "oneway";
+            ////parameters.BookingType = "oneway";
 
-            AirlineInfoFactory airlineInfoFactory = new AirlineInfoFactory();
-            string json = airlineInfoFactory.GenerateJsonResult(parameters);
-            StreamWriter writer = new StreamWriter(new FileStream("d:\\Oneway SGN-HAN 25-12.txt", FileMode.CreateNew));
-            writer.Write(json);
-            writer.Close();
-            Console.WriteLine("OK");
-            //Console.WriteLine(json);
+            //AirlineInfoFactory airlineInfoFactory = new AirlineInfoFactory();
+            //string json = airlineInfoFactory.GenerateJsonResult(parameters);
+            //StreamWriter writer = new StreamWriter(new FileStream("d:\\result.txt", FileMode.Create));
+            //writer.Write(json);
+            //writer.Close();
 
+            //Demo register
+            //FlightRegisterParameters parameters = new FlightRegisterParameters();
+            //parameters.From = "HAN";
+            //parameters.To = "SGN";
+            //parameters.DepartDay = "21";
+            //parameters.DepartMonth = "12";
+            //parameters.DepartYear = "2012";
+            //parameters.ReturnDay = "30";
+            //parameters.ReturnMonth = "12";
+            //parameters.ReturnYear = "2012";
+            //parameters.DepartFlightNo = "VN 1169";
+            //parameters.ReturnFlightNo = "VN 772";
+            //parameters.BookingType = "roundtrip";
+            ////parameters.BookingType = "oneway";
+            ////VN Airline ko cho nhap ten co dau
+            //parameters.FirstName = "Nguyen";
+            //parameters.LastName = "Van Quy";
+            //parameters.Phone = "44977676";
+            //parameters.Email = "kkk@gmail.com";
+
+            //RegisterResultFactory registerResultFactory = new RegisterResultFactory();
+            //string json = registerResultFactory.GenerateJsonResult(parameters);
+
+            //StreamWriter writer = new StreamWriter(new FileStream("d:\\result.txt", FileMode.Create));
+            //writer.Write(json);
+            //writer.Close();
         }
     }
 }

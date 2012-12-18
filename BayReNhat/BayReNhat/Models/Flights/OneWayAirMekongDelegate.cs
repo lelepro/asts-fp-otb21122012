@@ -20,6 +20,11 @@ namespace Flights
 
         }
 
+        public void DownloadWebPage(Parameters param, string fileName, string cookie)
+        {
+            throw new NotImplementedException();
+        }
+
         public ReturnData ParseResult(Parameters param, string fileName)
         {
 
