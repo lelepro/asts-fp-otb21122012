@@ -86,7 +86,6 @@ namespace Flights
             departTrip.DepartCity = param.From;
             departTrip.ReturnCity = param.To;
 
-
             List<Flight> flights = ParseFlightTable(document, "bfm_tbl_out");
             departTrip.Flights = flights;
             return departTrip;

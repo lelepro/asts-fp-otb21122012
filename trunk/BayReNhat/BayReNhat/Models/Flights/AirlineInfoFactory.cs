@@ -15,6 +15,10 @@ namespace Flights
         public string GenerateJsonResult(Parameters param)
         {
             List<ReturnData> listFullResult = new List<ReturnData>();
+			string departDay = string.Format("{0}/{1}/{2}",
+					param.DepartMonth, param.DepartDay, param.DepartYear);
+			string returnDay = string.Format("{0}/{1}/{2}",
+					param.ReturnMonth, param.ReturnDay, param.ReturnYear);
 
             for (int i = 0; i < _webScrappingName.Length; i++)
             {
@@ -66,14 +70,16 @@ namespace Flights
             }
             if (departTrip.Flights.Count > 0)
             {
+	            departTrip.Date = departDay;
                  finalResult.Data.Add(departTrip);
             }
             if (returnTrip.Flights.Count > 0)
             {
+	            returnTrip.Date = returnDay;
                 finalResult.Data.Add(returnTrip);
             }
    
-            string json = JsonConvert.SerializeObject(finalResult, Formatting.Indented);
+            string json = JsonConvert.SerializeObject(finalResult, Formatting.None);
             return json;
         }
 
