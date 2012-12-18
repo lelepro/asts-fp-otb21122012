@@ -9,7 +9,8 @@ namespace BayReNhat
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+						"~/Scripts/jquery-{version}-vsdoc.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -17,6 +18,8 @@ namespace BayReNhat
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
+	        bundles.Add(new ScriptBundle("~/bundles/jqx").Include(
+						"~/Scripts/jqx*"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -38,6 +41,8 @@ namespace BayReNhat
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+			bundles.Add(new StyleBundle("~/Content/themes/base/jqx/css").Include(
+				"~/Content/themes/base/jqx.base.css"));
         }
     }
 }

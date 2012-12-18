@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BayReNhat.Models;
 
 namespace BayReNhat.Controllers
 {
@@ -20,8 +21,13 @@ namespace BayReNhat.Controllers
 
         public ActionResult Contact()
         {
-            int x = 10;
             return View();
         }
+
+		public ActionResult Search(FlightSearchModel model)
+		{
+			
+			return View(model);
+		}
     }
 }
