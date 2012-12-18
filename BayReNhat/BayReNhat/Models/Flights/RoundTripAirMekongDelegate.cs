@@ -27,9 +27,13 @@ namespace Flights
             document.Load(fileName);
 
             Trip departTrip = CreateDepartTrip(document, param);
+			departTrip.Date = string.Format("{0}/{1}/{2}", 
+				param.DepartMonth, param.DepartDay, param.DepartYear);			
             returnData.Data.Add(departTrip);
 
             Trip returnTrip = CreateReturnTrip(document, param);
+			returnTrip.Date = string.Format("{0}/{1}/{2}",
+				param.ReturnMonth, param.ReturnDay, param.ReturnYear);
             returnData.Data.Add(returnTrip);
 
             return returnData;

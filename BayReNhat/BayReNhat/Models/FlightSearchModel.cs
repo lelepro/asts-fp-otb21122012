@@ -36,5 +36,39 @@ namespace BayReNhat.Models
 			}
 			return "";
 		}
+		public string GetDepartCityCode()
+		{
+			return GetCityCode(DepartCity);
+		}
+		public string GetReturnCityCode()
+		{
+			return GetCityCode(ReturnCity);
+		}
+
+		private static string GetCityCode(string city)
+		{
+			Dictionary<string, string> map = new Dictionary<string, string>();
+			map.Add("Hà Nội", "HAN");
+			map.Add("Hải Phòng", "HPH");
+			map.Add("Điện Biên", "DIN");
+			map.Add("Vinh", "VII");
+			map.Add("Huế", "HUI");
+			map.Add("Đồng Hới", "VHD");
+			map.Add("Đà Nẵng", "DAD");
+			map.Add("Pleiku", "PXU");
+			map.Add("Tuy Hòa", "TBB");
+			map.Add("Hồ Chí Minh", "SGN");
+			map.Add("Nha Trang", "NHA");
+			map.Add("Đà Lạt", "DLI");
+			map.Add("Phú Quốc", "PQC");
+			map.Add("Tam Kỳ", "VCL");
+			map.Add("Qui Nhơn", "UIH");
+			map.Add("Cần Thơ", "VCA");
+			map.Add("Côn Đảo", "VCS");
+			map.Add("Ban Mê Thuột", "BMV");
+			map.Add("Rạch Giá", "VKG");
+			map.Add("Cà Mau", "CAH");
+			return map[city];
+		}
 	}
 }

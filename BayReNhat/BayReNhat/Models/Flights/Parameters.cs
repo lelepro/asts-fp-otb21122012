@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Flights
 {
-    class Parameters
+	public class Parameters
     {
         public string From { get; set; }
 

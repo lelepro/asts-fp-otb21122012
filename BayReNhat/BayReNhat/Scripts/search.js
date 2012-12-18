@@ -2,24 +2,30 @@
 /// <reference path="jquery-1.8.3.js" />
 
 // Get data
-$(function () {
+function searchFlight(btype, dcity, rcity, ddate, rdate) {
+//$(function() {
 	// Send an AJAX request
-	var post = {
-
+	var departdate = new Date(ddate);
+	var returndate = new Date(rdate);
+	var paras = {
+		bookingtype: btype,
+		from: dcity,
+		to: rcity,
+		departdate: ddate,
+		returndate: rdate
 	};
 	$.ajax({
 		type: "GET",
 		url: "api/flight/search",
-		data: post,
+		data: paras,
 		dataType: "json",
-		success: function (data) {
+		success: function(data) {
 			if ($.type(data) == "string")
 				data = $.parseJSON(data);
 			appendContent(data);
-			//buildGrid(data.data);
 		}
 	});
-});
+}
 
 function appendContent(data) {
 	var panel = $("#panel_searched");
@@ -57,7 +63,7 @@ function buildGrid(div, data, radioname) {
 		columns: [
             {
             	text: 'Hãng bay',
-            	datafield: 'AirplineName',
+            	datafield: 'AirlineName',
             	cellsalign: 'center',
             	width: 120
             },
@@ -90,15 +96,17 @@ function buildGrid(div, data, radioname) {
 			},
 			{
 				text: 'Đơn vị',
-				datafield: 'CurUnit',
 				cellsalign: 'center',
+				cellsrenderer: function () {
+					return "VND";
+				},
 				sortable: false,
 				width: 50
 			},
 			{
 				text: "Chọn",
 				cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties) {
-					return "<input type='radio' name='"+radioname+"'>";
+					return "<input type='radio' name='" + radioname + "'>";
 				},
 				sortable: false,
 				cellsalign: 'center',

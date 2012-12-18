@@ -9,6 +9,7 @@ namespace Flights
     {
         public string DepartCity { get; set; }
         public string ReturnCity { get; set; }
+		public string Date { get; set; } 
         public List<Flight> Flights { get; set; }
     }
 }
