@@ -8,34 +8,33 @@ namespace BayReNhat.Models
 {
 	public enum BookingType
 	{
-		RoundTrip,
-		OneWay,
-		MultiDest
+		OneWay = 1,
+		RoundTrip = 2,
+		MultiDest = 3
 	}
 
 	public class FlightSearchModel
 	{
-		[Required]
-		[EnumDataType(typeof(BookingType))]
 		public BookingType BookingType { get; set; }
-		[Required]
 		public string DepartCity { get; set; }
-		[Required]
 		public string ReturnCity { get; set; }
-		[Required]
-		[DataType(DataType.Date)]
 		public DateTime DepartDay { get; set; }
-		[Required]
-		[DataType(DataType.Date)]
 		public DateTime ReturnDay { get; set; }
-		[Required]
-		[Range(1,6)]
 		public int NoOfAdult { get; set; }
-		[Required]
-		[Range(0,3)]
 		public int NoOfChildren { get; set; }
-		[Required]
-		[Range(0,2)]
 		public int NoOfInfant { get; set; }
+		public string GetBookingTypeName()
+		{
+			switch (BookingType)
+			{
+				case BookingType.RoundTrip:
+					return "Khứ hồi";
+				case BookingType.OneWay:
+					return "Một chiều";
+				case BookingType.MultiDest:
+					return "Nhiều chặng";
+			}
+			return "";
+		}
 	}
 }

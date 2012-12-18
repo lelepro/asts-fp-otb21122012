@@ -150,3 +150,14 @@ h2 {
 .ui-dialog-titlebar {
 	display:none;
 }
+/*Index*/
+.error {
+	color: red;
+	font-weight: bold;
+}
+/*Search*/
+#panel_searching {
+	float: right;
+	width: 95%;
+	margin-left: 100%;
+}

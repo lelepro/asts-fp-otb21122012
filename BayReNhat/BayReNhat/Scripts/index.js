@@ -1,4 +1,7 @@
-﻿$(function () {
+﻿/// <reference path="jquery-1.8.3.js" />
+/// <reference path="jquery-1.8.3-vsdoc.js" />
+
+$(function () {
 	init();
 	registerdlg("#dlgCity", "#departcity");
 	registerdlg("#dlgCity", "#returncity");
@@ -15,7 +18,8 @@
 });
 
 function init() {
-	$("#departday, #returnday").datepicker();
+	$("#departday").datepicker({minDate: 0});
+	$("#returnday").datepicker({ minDate: 0 });
 	$("#dlgCity").dialog({
 		autoOpen: false,
 		draggable: false,
@@ -93,11 +97,17 @@ $(function() {
 			showError("Bạn chưa chọn ngày đi");
 			err = true;
 		}
-		if ($("#returnday").attr("isselected") == "false" && 
-			$("#returnday").attr("disabled")) {
+		if ($("#returnday").attr("isselected") == "false" && !$("#returnday").prop("disabled")) {
 			showError("Bạn chưa chọn ngày về");
 			err = true;
 		}
+		var deparday = Date.parse($("#departday").val());
+		var returnday = Date.parse($("#returnday").val());
+		if (deparday != "NaN" && returnday != "NaN" && deparday > returnday) {
+			showError("Ngày về phải sau ngày đi");
+			err = true;
+		}
+			
 		return !err;
 	});
 });
