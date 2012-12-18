@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Flights
 {
@@ -39,7 +40,10 @@ namespace Flights
         public string Price
         {
             get { return _price; }
-            set { _price = value.Trim(); }
+            set
+            {
+                _price = Regex.Replace(value, "[^0-9]", ""); ;
+            }
         }
     }
 }
