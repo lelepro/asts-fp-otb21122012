@@ -13,7 +13,7 @@ namespace Flights
     {
         static void Main(string[] args)
         {
-
+            //1. Demo search
             //Parameters parameters = new Parameters();
             //parameters.From = "SGN";
             //parameters.To = "HAN";
@@ -32,7 +32,7 @@ namespace Flights
             //writer.Write(json);
             //writer.Close();
 
-            //Demo register
+            //2. Demo register
             //FlightRegisterParameters parameters = new FlightRegisterParameters();
             //parameters.From = "HAN";
             //parameters.To = "SGN";
