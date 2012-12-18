@@ -70,9 +70,7 @@ namespace Flights
                 
                 if (node != null)
                 {
-                    string price = node.InnerText;
-                    price = price.Remove(0, "VND".Length) + " VND";
-                    flight.Price = price;
+                    flight.Price = node.InnerText;
                 }
                 
 
@@ -85,10 +83,11 @@ namespace Flights
                         flightNoNode.RemoveChild(unnecessaryNode);
                     }
                     flight.FlightNo = flightNoNode.InnerText.Replace("  ", " ");
+
+                    flight.AirlineName = "Jesta";
+                    flights.Add(flight);
                 }
 
-                flight.AirlineName = "Jesta";
-                flights.Add(flight);
             }
 
             return flights;
