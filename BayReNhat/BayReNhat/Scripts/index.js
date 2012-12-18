@@ -5,21 +5,18 @@ $(function () {
 	init();
 	registerdlg("#dlgCity", "#departcity");
 	registerdlg("#dlgCity", "#returncity");
-	hintTextbox("#departcity", "bạn đi từ đâu");
-	hintTextbox("#returncity", "bạn muốn đến đâu");
-	hintTextbox("#departday", "ngày nào bạn đi");
-	hintTextbox("#returnday", "ngày nào bạn về");
-	$("input[name=direction]:radio").change(function() {
-		if ($("input[name=direction]:checked").val() == "onewaytravel")
+	$("#returnday").attr("disabled", $("input[name=bookingtype]:checked").val());
+	$("input[name=bookingtype]:radio").change(function() {
+		if ($("input[name=bookingtype]:checked").val() == "oneway")
 			$("#returnday").attr("disabled", true);
-		else if ($("input[name=direction]:checked").val() == "returntravel")
+		else if ($("input[name=bookingtype]:checked").val() == "roundtrip")
 			$("#returnday").attr("disabled", false);
 	});
 });
 
 function init() {
 	$("#departday").datepicker({minDate: 0});
-	$("#returnday").datepicker({ minDate: 0 });
+	$("#returnday").datepicker({minDate: 0 });
 	$("#dlgCity").dialog({
 		autoOpen: false,
 		draggable: false,
@@ -64,15 +61,12 @@ function hintTextbox(textboxId, hint) {
 	textbox.css("color", "gray");
 	textbox.attr("isselected", false);
 	
-	textbox.click(function() {
+	textbox.change(function() {
 		if (textbox.val() == hint) {
 			textbox.val("");
 			textbox.css("color", "");
 			textbox.attr("isselected", true);
-		}
-	});
-	textbox.change(function() {
-		if (textbox.val() == "") {
+		} else if (textbox.val() == "") {
 			textbox.val(hint);
 			textbox.css("color", "gray");
 			textbox.attr("isselected", false);
@@ -85,19 +79,19 @@ $(function() {
 	$("#btnsearch").click(function() {
 		$(".error").empty();
 		var err = false;
-		if ($("#departcity").attr("isselected") == "false") {
+		if ($("#departcity").val() == "") {
 			showError("Bạn chưa chọn điểm đi");
 			err = true;
 		}
-		if ($("#returncity").attr("isselected") == "false") {
+		if ($("#returncity").val() == "") {
 			showError("Bạn chưa chọn điểm đến");
 			err = true;
 		}
-		if ($("#departday").attr("isselected") == "false") {
+		if ($("#departday").val() == "") {
 			showError("Bạn chưa chọn ngày đi");
 			err = true;
 		}
-		if ($("#returnday").attr("isselected") == "false" && !$("#returnday").prop("disabled")) {
+		if ($("#returnday").val() == "" && !$("#returnday").prop("disabled")) {
 			showError("Bạn chưa chọn ngày về");
 			err = true;
 		}
