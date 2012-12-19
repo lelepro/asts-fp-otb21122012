@@ -154,7 +154,7 @@ namespace Flights
         {
    
             HtmlNode node = document.DocumentNode.SelectSingleNode("//form[@name='airAvailNonForm']");
-            string url = "unknown";
+            string url = "";
 
             if (node != null)
             {
