@@ -31,87 +31,142 @@ function appendContent(data) {
 	var panel = $("#panel_searched");
 	panel.empty();
 	var nDirection = data.Data.length;
-	for (var i = 0; i < nDirection; i++) {
-		var txt = "Các chuyến bay từ " + data.Data[i].DepartCity +
-			" đến " + data.Data[i].ReturnCity;
-		$("<h2/>", { text: txt }).appendTo(panel);
-		$("<p/>", { text: "Ngày: " + data.Data[i].Date }).appendTo(panel);
-		var gridid = "grid" + i;
-		var radioname = "radioname" + i;
-		$("<div/>", { id: "grid" + i , style: "margin: auto;"}).appendTo(panel);
-		buildGrid("#" + gridid, data.Data[i].Flights, radioname);
+	if (nDirection != 0) {
+		for (var i = 0; i < nDirection; i++) {
+			var txt = "Các chuyến bay từ " + getCityNameByCode(data.Data[i].DepartCity) +
+				" đến " + getCityNameByCode(data.Data[i].ReturnCity);
+			$("<h2/>", { text: txt }).appendTo(panel);
+			$("<p/>", { text: "Ngày: " + data.Data[i].Date, style: "font-weight: bold" }).appendTo(panel);
+			var gridid = "grid" + i;
+			var radioname = "radioname" + i;
+			$("<div/>", { id: "grid" + i, style: "margin: auto;" }).appendTo(panel);
+			buildGrid("#" + gridid, data.Data[i].Flights, radioname);
+		}
+		$(panel).append($("<button/>", {
+			text: 'Đặt vé',
+			class: 'button',
+			formaction: '#',
+			id: 'btnBooking',
+			style: 'margin-top: 30px'
+		}));
+	} else {
+		var txt = "Xin lỗi! Chúng tôi không tìm thấy chuyến bay nào theo yêu cầu của bạn.";
+		$("<p/>", {text: txt, style: 'color: red'}).appendTo(panel);
 	}
 }
 
 function buildGrid(div, data, radioname) {
 	//alert(data);
-	var source ={
-        localdata: data,
-        datatype: "array"
-    };
+	var source = {
+		localdata: data,
+		datatype: "array"
+	};
 	var dataAdapter = new $.jqx.dataAdapter(source, {
-		loadComplete: function (data) { },
-		loadError: function (xhr, status, error) { }
+		loadComplete: function(data) {
+		},
+		loadError: function(xhr, status, error) {
+		}
 	});
 	$(div).jqxGrid({
 		source: dataAdapter,
 		sortable: true,
 		width: 680,
 		autoheight: true,
+		rowsheight: 35,
 		//altrows: true,
 		//enabletooltips: true,
 		columns: [
-            {
-            	text: 'Hãng bay',
-            	datafield: 'AirlineName',
-            	cellsalign: 'center',
-            	width: 120
-            },
+			{
+				text: 'Logo',
+				align: 'center',
+				cellsalign: 'center',
+				width: 125,
+				cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties) {
+					var img = "/Images/airmekong_logo.png";
+					if (source.localdata[row].AirlineName == "Vietnam Airline")
+						img = "/Images/vnairline_logo.png";
+					else if (source.localdata[row].AirlineName == "Jesta")
+						img = "/Images/jetstar_logo.png";
+					return $(defaulthtml).append($("<img/>", { src: img, height: '35px', width: '124px' })).prop("outerHTML");
+				}
+			},
+			{
+				text: 'Hãng bay',
+				datafield: 'AirlineName',
+				cellsalign: 'center',
+				align: 'center',
+				width: 120
+			},
 			{
 				text: 'Mã chuyến bay',
 				datafield: 'FlightNo',
 				cellsalign: 'center',
+				align: 'center',
 				sortable: false,
 				width: 120
 			},
 			{
-				text: 'Thời gian bắt đầu',
+				text: 'Thời gian',
 				datafield: 'StartTime',
 				cellsalign: 'center',
-				width: 130
-			},
-			{
-				text: 'Thời gian kết thúc',
-				datafield: 'EndTime',
-				cellsalign: 'center',
-				width: 130
+				align: 'center',
+				width: 130,
+				cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties) {
+					return $(defaulthtml).append(" - " + source.localdata[row].EndTime).prop("outerHTML");
+				}
 			},
 			{
 				text: 'Giá',
 				datafield: 'Price',
 				cellsalign: 'right',
+				align: 'center',
 				cellsformat: 'd',
 				sortable: true,
-				width: 80
-			},
-			{
-				text: 'Đơn vị',
-				cellsalign: 'center',
-				cellsrenderer: function () {
-					return "VND";
+				cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties) {
+					return $(defaulthtml).html($.number(value) + " VNĐ").prop("outerHTML");
 				},
-				sortable: false,
-				width: 50
+				width: 120
 			},
 			{
 				text: "Chọn",
 				cellsrenderer: function (row, columnfield, value, defaulthtml, columnproperties) {
-					return "<input type='radio' name='" + radioname + "'>";
+					return $(defaulthtml).append($("<input/>", { type: "radio", name: radioname, id: radioname+row })).prop("outerHTML");
 				},
 				sortable: false,
 				cellsalign: 'center',
-				width: 50
+				align: 'center'
 			}
-        ]
+		]
 	});
+	$(div).bind("rowselect", function (event) {
+		//alert("hello");
+		$("#" + radioname + event.args.rowindex).attr("checked", true);
+	});
+}
+
+var cityCode = {
+	HAN: "Hà Nội",
+	HPH: "Hải Phòng",
+	DIN: "Điện Biên",
+	VII: "Vinh",
+	HUI: "Huế",
+	VHD: "Đồng Hới",
+	DAD: "Đà Nẵng",
+	PXU: "Pleiku",
+	TBB: "Tuy Hòa",
+	SGN: "Hồ Chí Minh",
+	NHA: "Nha Trang",
+	DLI: "Đà Lạt",
+	PQC: "Phú Quốc",
+	VCL: "Tam Kỳ",
+	UIH: "Qui Nhơn",
+	VCA: "Cần Thơ",
+	VCS: "Côn Đảo",
+	BMV: "Ban Mê Thuột",
+	VKG: "Rạch Giá",
+	CAH: "Cà Mau"
+};
+
+function getCityNameByCode(city) {
+	return cityCode[city];
 }
