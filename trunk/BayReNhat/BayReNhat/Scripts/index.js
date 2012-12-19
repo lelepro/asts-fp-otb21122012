@@ -5,7 +5,7 @@ $(function () {
 	init();
 	registerdlg("#dlgCity", "#departcity");
 	registerdlg("#dlgCity", "#returncity");
-	$("#returnday").attr("disabled", $("input[name=bookingtype]:checked").val());
+	$("#returnday").attr("disabled", $("#rdb_roundtrip").val());
 	$("input[name=bookingtype]:radio").change(function() {
 		if ($("input[name=bookingtype]:checked").val() == "oneway")
 			$("#returnday").attr("disabled", true);
