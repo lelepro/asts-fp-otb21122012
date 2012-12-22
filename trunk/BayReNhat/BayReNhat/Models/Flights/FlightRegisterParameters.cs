@@ -7,12 +7,47 @@ namespace Flights
 {
     class FlightRegisterParameters : Parameters
     {
+        private string _returnFlightNo = "";
+        private string _departFlightNo = "";
+        private string _firstName = "";
+        private string _lastName = "";
+        private string _phone = "";
+        private string _email = "";
 
-        public string DepartFlightNo { get; set; }
-        public string ReturnFlightNo { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Phone { get; set; }
-        public string Email{ get; set; }
+        public string ReturnFlightNo
+        {
+            get { return _returnFlightNo; }
+            set { _returnFlightNo = value; }
+        }
+
+        public string DepartFlightNo
+        {
+            get { return _departFlightNo; }
+            set { _departFlightNo = value; }
+        }
+
+        public string FirstName
+        {
+            get { return _firstName; }
+            set { _firstName = value; }
+        }
+
+        public string LastName
+        {
+            get { return _lastName; }
+            set { _lastName = value; }
+        }
+
+        public string Phone
+        {
+            get { return _phone; }
+            set { _phone = value; }
+        }
+
+        public string Email
+        {
+            get { return _email; }
+            set { _email = value; }
+        }
     }
 }
