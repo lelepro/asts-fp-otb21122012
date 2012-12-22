@@ -33,7 +33,7 @@ namespace Flights
             }
             else if (type.Contains("BL") == true)
             {
-                return null;
+                return new JestaRegister();
             }
             else if (type.Contains("P8") == true)
             {

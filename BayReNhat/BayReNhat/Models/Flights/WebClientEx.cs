@@ -57,5 +57,19 @@ namespace Flights
             writeBinay.Write(byteRespone);
             writeBinay.Close();
         }
+
+        public void DownloadFileEx2(string postData, string fileName)
+        {
+            HttpWebRequest request = (HttpWebRequest)GetWebRequest(new Uri(m_address));
+            request.ServicePoint.Expect100Continue = false;
+
+            Headers["Content-Type"] = "application/x-www-form-urlencoded";
+            byte[] byteRespone = UploadData(m_address, "POST", System.Text.Encoding.Unicode.GetBytes(postData));
+
+            FileStream writeStream = new FileStream(fileName, FileMode.Create);
+            BinaryWriter writeBinay = new BinaryWriter(writeStream);
+            writeBinay.Write(byteRespone);
+            writeBinay.Close();
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Flights
     {
         static void Main(string[] args)
         {
-            //1. Demo search
+
             //Parameters parameters = new Parameters();
             //parameters.From = "SGN";
             //parameters.To = "HAN";
@@ -32,32 +32,34 @@ namespace Flights
             //writer.Write(json);
             //writer.Close();
 
-            //2. Demo register
-            //FlightRegisterParameters parameters = new FlightRegisterParameters();
-            //parameters.From = "HAN";
-            //parameters.To = "SGN";
-            //parameters.DepartDay = "21";
-            //parameters.DepartMonth = "12";
-            //parameters.DepartYear = "2012";
-            //parameters.ReturnDay = "30";
-            //parameters.ReturnMonth = "12";
-            //parameters.ReturnYear = "2012";
-            //parameters.DepartFlightNo = "VN 1169";
-            //parameters.ReturnFlightNo = "VN 772";
-            //parameters.BookingType = "roundtrip";
-            ////parameters.BookingType = "oneway";
-            ////VN Airline ko cho nhap ten co dau
-            //parameters.FirstName = "Nguyen";
-            //parameters.LastName = "Van Quy";
-            //parameters.Phone = "44977676";
-            //parameters.Email = "kkk@gmail.com";
+            FlightRegisterParameters parameters = new FlightRegisterParameters();
+            parameters.From = "SGN";
+            parameters.To = "HAN";
+            parameters.DepartDay = "1";
+            parameters.DepartMonth = "1";
+            parameters.DepartYear = "2013";
+            parameters.ReturnDay = "5";
+            parameters.ReturnMonth = "1";
+            parameters.ReturnYear = "2013";
+            parameters.DepartFlightNo = "BL 802";
+            parameters.ReturnFlightNo = "BL 799";
+            parameters.BookingType = "roundtrip";
+            //parameters.BookingType = "oneway";
+            //VN Airline ko cho nhap ten co dau
+            parameters.FirstName = "Nguyen";
+            parameters.LastName = "Van Quy";
+            parameters.Phone = "0998 43353";
+            parameters.Email = "abc@gmail.com";
 
-            //RegisterResultFactory registerResultFactory = new RegisterResultFactory();
-            //string json = registerResultFactory.GenerateJsonResult(parameters);
+            RegisterResultFactory registerResultFactory = new RegisterResultFactory();
+            string json = registerResultFactory.GenerateJsonResult(parameters);
 
-            //StreamWriter writer = new StreamWriter(new FileStream("d:\\result.txt", FileMode.Create));
-            //writer.Write(json);
-            //writer.Close();
+            StreamWriter writer = new StreamWriter(new FileStream("d:\\result.txt", FileMode.Create));
+            writer.Write(json);
+            writer.Close();
+
+            Console.WriteLine("OK");
+
         }
     }
 }
