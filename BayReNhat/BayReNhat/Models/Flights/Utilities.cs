@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Flights
 {
@@ -20,6 +21,18 @@ namespace Flights
                 output = input.Remove(index, NON_BREAKING_SPACE.Length);
             }
             return output;
+        }
+
+        public static string ExtractNumberAndCharacter(string input)
+        {
+            string newString = Regex.Replace(input, "[^0-9A-Za-z]", "");
+            return newString;
+        }
+
+        public static string ExtractNumber(string input)
+        {
+            string newString = Regex.Replace(input, "[^0-9]", "");
+            return newString;
         }
     }
 }

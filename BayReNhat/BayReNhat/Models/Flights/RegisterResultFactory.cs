@@ -35,9 +35,9 @@ namespace Flights
             {
                 return new JestaRegister();
             }
-            else if (type.Contains("P8") == true)
+            else if (type.Contains("P") == true && Utilities.ExtractNumberAndCharacter(parameters.DepartFlightNo).Contains("P8") == true)
             {
-                return null;
+                return new AirMekongRegister();
             }
             return null;
         }
