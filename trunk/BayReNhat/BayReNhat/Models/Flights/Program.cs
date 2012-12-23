@@ -35,16 +35,16 @@ namespace Flights
             FlightRegisterParameters parameters = new FlightRegisterParameters();
             parameters.From = "SGN";
             parameters.To = "HAN";
-            parameters.DepartDay = "1";
+            parameters.DepartDay = "5";
             parameters.DepartMonth = "1";
             parameters.DepartYear = "2013";
-            parameters.ReturnDay = "5";
-            parameters.ReturnMonth = "1";
-            parameters.ReturnYear = "2013";
-            parameters.DepartFlightNo = "BL 802";
-            parameters.ReturnFlightNo = "BL 799";
-            parameters.BookingType = "roundtrip";
-            //parameters.BookingType = "oneway";
+            //parameters.ReturnDay = "12";
+            //parameters.ReturnMonth = "1";
+            //parameters.ReturnYear = "2013";
+            parameters.DepartFlightNo = "P8-928";
+            //parameters.ReturnFlightNo = "P8-553 P8-565";
+            //parameters.BookingType = "roundtrip";
+            parameters.BookingType = "oneway";
             //VN Airline ko cho nhap ten co dau
             parameters.FirstName = "Nguyen";
             parameters.LastName = "Van Quy";
