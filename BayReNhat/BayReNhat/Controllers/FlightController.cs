@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Runtime.InteropServices;
 using System.Web.Http;
 using BayReNhat.Models;
 using Flights;
@@ -29,38 +30,54 @@ namespace BayReNhat.Controllers
 			AirlineInfoFactory airlineInfoFactory = new AirlineInfoFactory();
 			string json = airlineInfoFactory.GenerateJsonResult(parameters);
 			return json;
-			//SearchResultModel result = new SearchResultModel()
-			//    {
-			//        BookingType = BookingType.OneWay,
-			//        Data = new DirectionModel[] {
-			//            new DirectionModel()
-			//                {
-			//                    DepartCity = "Ha Noi",
-			//                    ReturnCity = "TP HCM",
-			//                    Date = "12/18/2012",
-			//                    Flights = new FlightModel[]
-			//                    {
-			//                        new FlightModel("Vietnam Airline", "VN 1374", "16:55", "18:15", 814000, "VND"),
-			//                        new FlightModel("Vietnam Airline", "VN 1370", "05:50", "07:10", 814000, "VND")
-			//                    }
-			//                },
-			//            new DirectionModel()
-			//                {
-			//                    DepartCity = "TP HCM",
-			//                    ReturnCity = "Ha Noi",
-			//                    Date = "12/19/2012",
-			//                    Flights = new FlightModel[]
-			//                    {
-			//                        new FlightModel("Vietnam Airline", "VN 1374", "16:55", "18:15", 814000, "VND"),
-			//                        new FlightModel("Vietnam Airline", "VN 1370", "05:50", "07:10", 814000, "VND")
-			//                    }
-			//                }
-			//        }
+		}
 
-			//    };
+		[HttpGet]
+		public string OneWayRegister(string from, string to, DateTime departDate,
+			string departFlightNo, string firstName, string lastName, string tel, string email)
+		{ 
+			FlightRegisterParameters parameters = new FlightRegisterParameters();
+			parameters.BookingType = "oneway";
+			parameters.From = from;
+			parameters.To = to;
+			parameters.DepartDay = departDate.Day.ToString();
+			parameters.DepartMonth = departDate.Month.ToString();
+			parameters.DepartYear = departDate.Year.ToString();
+			parameters.DepartFlightNo = departFlightNo;
+			parameters.FirstName = firstName;
+			parameters.LastName = lastName;
+			parameters.Phone = tel;
+			parameters.Email = email;
 
-			//return JsonConvert.SerializeObject(result, Formatting.None);
-			//return msg;
+			RegisterResultFactory registerResultFactory = new RegisterResultFactory();
+			string json = registerResultFactory.GenerateJsonResult(parameters);
+			return json;
+		}
+
+		[HttpGet]
+		public string RoudTripRegister(string from, string to, DateTime departDate, DateTime returnDate,
+			string departFlightNo, string returnFlightNo, string firstName, string lastName, string tel, string email)
+		{
+			FlightRegisterParameters parameters = new FlightRegisterParameters();
+			parameters.BookingType = "roundtrip";
+			parameters.From = from;
+			parameters.To = to;
+			parameters.DepartDay = departDate.Day.ToString();
+			parameters.DepartMonth = departDate.Month.ToString();
+			parameters.DepartYear = departDate.Year.ToString();
+			parameters.ReturnDay = returnDate.Day.ToString();
+			parameters.ReturnMonth = returnDate.Month.ToString();
+			parameters.ReturnYear = returnDate.Year.ToString();
+			parameters.DepartFlightNo = departFlightNo;
+			parameters.ReturnFlightNo = returnFlightNo;
+			parameters.FirstName = firstName;
+			parameters.LastName = lastName;
+			parameters.Phone = tel;
+			parameters.Email = email;
+
+			RegisterResultFactory registerResultFactory = new RegisterResultFactory();
+			string json = registerResultFactory.GenerateJsonResult(parameters);
+			return json;
 		}
     }
 }
