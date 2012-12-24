@@ -34,5 +34,17 @@ namespace Flights
             string newString = Regex.Replace(input, "[^0-9]", "");
             return newString;
         }
+
+        public static string JestaExtractNumber(string input)
+        {
+            string[] words = input.Split('x');
+            if (words.Length != 2)
+            {
+                return "";
+            }
+
+            string newString = Regex.Replace(words[1], "[^0-9]", "");
+            return newString;
+        }
     }
 }
