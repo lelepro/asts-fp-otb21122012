@@ -28,6 +28,11 @@ namespace Flights
 
             string continueUrl = GetContinueUrl(document, fileName);
         
+            if (continueUrl == "")
+            {
+                return;
+            }
+            
             string outFormData = GetSelectedCombobox(document, param.DepartFlightNo, "bfm_tbl_out");
             string inFormData = GetSelectedCombobox(document, param.ReturnFlightNo, "bfm_tbl_in");
 
@@ -158,7 +163,7 @@ namespace Flights
 
             if (node != null)
             {
-                url = node.GetAttributeValue("action", url);
+                url = node.GetAttributeValue("action", "");
                 url = url.Replace("9yyv", "yyyv");
                 url = string.Format("https://cat.sabresonicweb.com{0}", url);
             }
