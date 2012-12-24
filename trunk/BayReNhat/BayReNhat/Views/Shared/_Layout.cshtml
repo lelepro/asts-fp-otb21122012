@@ -29,7 +29,8 @@
 			</div>
 		</header>
     <div id="titlebar">
-        <h1 class="content-wrapper">@ViewBag.TitleBar</h1>
+	    <h1 class="content-wrapper">@ViewBag.TitleBar</h1>
+		@RenderSection("step", false)
     </div>
     <div id="body" class="content-wrapper">
         @RenderBody()

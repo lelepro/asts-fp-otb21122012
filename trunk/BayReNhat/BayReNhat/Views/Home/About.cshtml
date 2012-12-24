@@ -8,19 +8,150 @@
 	@Scripts.Render("~/bundles/jqueryui")
 	@Styles.Render("~/Content/themes/base/css")
 }
-<h2>
-    Hãy cho tôi biết về chuyến đi của bạn, chúng tôi sẽ giúp bạn tìm những giá vé rẽ nhất của các hãng:
-    Vietnam Airlines, Jetstar, và Mekong Air.
-</h2>
-
-<div class="userGuide">
-    <div class="flightFindingUserGuide">
-        <h2>
-            Hướng dẫn tìm kiếm chuyến bay
-        </h2>
-        <img src="../../Images/flight_user_guide.jpg" alt="user_guide"/>
-    </div>
-    <h2>
-        Hướng dẫn đặt vé
-    </h2>
+<div>
+	<h1>
+		Các bước tìm kiếm
+	</h1>
+	<h2>
+		Bước 1: thông tin tìm kiếm
+	</h2>
+	<img src="../../Images/flight_user_guide.jpg" alt="user_guide"/>
+	<h2>
+		Bước 2: kết quả tìm kiếm
+	</h2>
+	<p>Chương trình sẽ hiện ra các chuyến bay thảo yêu cầu của bạn. 
+		Bạn hãy chọn một hoặc nhiều chuyến bay mà bạn muốn đi để tiến hành đặt vé.
+	</p>
+	<img src="../../Images/searchResult.png"/>
+	<h2>
+		Bước 3: xác nhận và cung cấp thông tin cá nhân
+	</h2>
+	<p>
+		Bạn hãy xác nhận lại những chuyến bay mà bạn chọn có đúng không. Nếu muốn đăng ký các chuyến
+		bay đó, bạn phải điền thông tin cá nhân. Hãy điền thông tin chính xác :)
+	</p>
+	<h2>
+		Bước 4: thanh toán
+	</h2>
+	<p style="color: red">
+		Sorry! Quá trình thanh toán đang được xây dựng :)
+	</p>
+	
+	<h1>
+		APIs
+	</h1>
+	<p>
+		Chương trình cung cấp cho bạn 3 API chính, giúp bạn có thể thêm chức năng tìm kiếm chuyến bay nội
+		địa vào hệ thống mình mà không cần xây dựng lại.
+	</p>
+	<h2>
+		API 1: Search
+	</h2>
+	<strong>Công dụng</strong>
+	<p>API này giúp tìm kiếm các chuyến bay của 3 hãng hàng không nội địa (Vietnam Airline, Jetstar, Mekong Air)</p>
+	<strong>Tham số</strong>
+	<ul>
+		<li>
+			<i>bookingtype (string)</i>: oneway, roundtrip hoặc multidest
+		</li>
+		<li>
+			<i>from (string)</i>: mã thành phố đi (có 3 ký tự)
+		</li>
+		<li>
+			<i>to (string)</i>: mã thành phố đến (có 3 ký tự)
+		</li>
+		<li>
+			<i>departdate (DateTime)</i>: ngày đi, bạn nên chỉnh ngày hệ thống bạn dạng mm/dd/yyyy
+		</li>
+		<li>
+			<i>returndate (DateTime)</i>: ngày về, bạn nên chỉnh ngày hệ thống bạn dạng mm/dd/yyyy
+		</li>
+	</ul>
+	<strong>Ví dụ</strong>
+	<p>Request:</p>
+	<i>http://localhost:57370/api/flight/search?bookingtype=RoundTrip&from=SGN&to=NHA&departdate=12%2F26%2F2012&returndate=12%2F28%2F2012</i>
+	<p>Respone:</p>
+	<img src="../../Images/api1ex.png"/>
+	<h2>
+		API 2: OnewayRegister
+	</h2>
+	<strong>Công dụng</strong>
+	<p>AIP này giúp bạn đăng ký chuyến bay một chiều</p>
+	<strong>Tham số</strong>
+	<ul>
+		<li>
+			<i>from (string)</i>: mã thành phố đi (có 3 ký tự)
+		</li>
+		<li>
+			<i>to (string)</i>: mã thành phố đến (có 3 ký tự)
+		</li>
+		<li>
+			<i>departDate (DateTime)</i>: ngày đi, bạn nên chỉnh ngày hệ thống bạn dạng mm/dd/yyyy
+		</li>
+		<li>
+			<i>departFlightNo (string)</i>: mã chuyến bay
+		</li>
+		<li>
+			<i>firstName (string)</i>: tên khách hàng
+		</li>
+		<li>
+			<i>lastName (string)</i>: họ khách hàng
+		</li>
+		<li>
+			<i>tel (string)</i>: số điện thoại khách hàng
+		</li>
+		<li>
+			<i>email (string)</i>: email khách hàng
+		</li>
+	</ul>
+	<strong>
+		Ví dụ
+	</strong>
+	<p>Request</p>
+	<i>http://localhost:57370/api/flight/onewayregister?from=SGN&to=NHA&departDate=12%2F26%2F2012&departFlightNo=VN+1362&firstName=Chuong&lastName=Le&tel=0123456789&email=chuongle%40gmail.com</i>
+	<p>Response</p>
+	<img src="../../Images/api2ex.png"/>
+	<h2>
+		API 3: RoundtripRegister
+	</h2>
+	<strong>Công dụng</strong>
+	<p>AIP này giúp bạn đăng ký chuyến bay có khứ hồi</p>
+	<strong>Tham số</strong>
+	<ul>
+		<li>
+			<i>from (string)</i>: mã thành phố đi (có 3 ký tự)
+		</li>
+		<li>
+			<i>to (string)</i>: mã thành phố đến (có 3 ký tự)
+		</li>
+		<li>
+			<i>departDate (DateTime)</i>: ngày đi, bạn nên chỉnh ngày hệ thống bạn dạng mm/dd/yyyy
+		</li>
+		<li>
+			<i>returnDate (DateTime)</i>: ngày về, bạn nên chỉnh ngày hệ thống bạn dạng mm/dd/yyyy
+		</li>
+		<li>
+			<i>departFlightNo (string)</i>: mã chuyến bay đi
+		</li>
+		<li>
+			<i>returnFlightNo (string)</i>: mã chuyến bay về
+		</li>
+		<li>
+			<i>firstName (string)</i>: tên khách hàng
+		</li>
+		<li>
+			<i>lastName (string)</i>: họ khách hàng
+		</li>
+		<li>
+			<i>tel (string)</i>: số điện thoại khách hàng
+		</li>
+		<li>
+			<i>email (string)</i>: email khách hàng
+		</li>
+	</ul>
+	<strong>Ví dụ</strong>
+	<p>Request</p>
+	<i>http://localhost:57370/api/flight/roundtripregister?from=SGN&to=VII&departDate=12%2F26%2F2012&returnDate=12%2F27%2F2012&departFlightNo=BL+522&returnFlightNo=BL+523&firstName=Chuong&lastName=Le&tel=0123456789&email=chuongle%40gmail.com</i>
+	<p>Response</p>
+	<img src="../../Images/api3ex.png"/>
 </div>
