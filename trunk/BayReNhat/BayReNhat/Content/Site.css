@@ -113,16 +113,45 @@ h2 {
 	float: right;
 	width: 90%;
 }
+.member img {
+    margin-left: 30%;
+}
 .member article {
 	clear: both;
+    height: 200px;
 }
 .avatar {
 	width: 30%;
 	float: left;
 	height: 100px;
 }
+.member ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    list-style-position: outside;
+    line-height: 2em;
+}
+.member h5 {
+    padding: 0;
+    margin: 0;
+    font-size:1.5em;
+    text-transform: uppercase;
+	background-image: -webkit-gradient(
+	linear,
+	left top, left bottom,
+	from(rgba(0, 0, 0, 1)),
+	to(rgba(0, 0, 0, 0.2))
+	);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
 .information {
 	float: left;
+}
+.member .label {
+    font-weight: bold;
+    margin-right: 0.5em;
 }
 /*City dialog*/
 #dlgCity .ui-selecting {

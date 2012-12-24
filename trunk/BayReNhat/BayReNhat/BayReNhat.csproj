@@ -292,6 +292,8 @@
     <Content Include="Content\themes\resources\sortremove.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Images\0912021.JPG" />
+    <Content Include="Images\0912041.jpg" />
     <Content Include="Images\airmekong_logo.png" />
     <Content Include="Images\jetstar_logo.png" />
     <Content Include="Images\loading24.gif" />
