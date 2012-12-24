@@ -35,7 +35,7 @@ form {
 	font-size: 16px;
 	font-weight: bold;
 }
-input[type="text"], select {
+input[type="text"], select , input[type="tel"], input[type="email"]{
 	padding: 5px;
 	font-size: 16px;
 	font-weight: bold;

@@ -298,6 +298,7 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\searching.gif" />
     <Content Include="Images\vnairline_logo.png" />
+    <Content Include="Scripts\booking.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.8.3-vsdoc.js" />
     <Content Include="Scripts\jquery-1.8.3.js" />
@@ -369,6 +370,7 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\search.js" />
+    <Content Include="Scripts\util.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -398,6 +400,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Search.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Booking.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

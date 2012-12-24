@@ -1,0 +1,112 @@
+﻿@using BayReNhat.Models
+@{
+	ViewBag.Title = "Booking";
+	ViewBag.TitleBar = "Đặt vé";
+	List<FlightModel> flights = (List<FlightModel>)TempData["flights"];
+	TempData.Keep("flights");
+	string bookingType = (string) TempData["BookingType"];
+	TempData.Keep("BookingType");
+}
+
+@section Scripts
+{
+	@Scripts.Render("~/bundles/jquery")
+	@Styles.Render("~/Content/themes/base/css")
+}
+
+@if (flights != null)
+{
+	<div>
+		<h1>
+			Thông tin chuyến bay
+		</h1>
+		<h2>
+			Bạn đã chọn chuyến bay
+		</h2>
+		@foreach (FlightModel flight in flights)
+		{
+			<p>
+				Chuyến bay mã <strong>@flight.FlightNo</strong> của hãng <strong>@flight.AirlineName</strong>.
+			</p>
+			<p>
+				Thời gian: ngày <strong>@flight.Date.ToShortDateString()</strong>, lúc <strong>@flight.StartTime - @flight.EndTime</strong>
+			</p>
+			<p>
+				Giá: <strong>@flight.Price.ToString("0,0")</strong> VNĐ
+			</p>
+		}
+	</div>
+
+	<div>
+		<h1>
+			Thông tin khách hàng
+		</h1>
+		<h2>
+			Bạn hãy điền các thông tin cá nhân sau:
+		</h2>
+		<form id="formInfo">
+			<div class="error" id="error"></div>
+			<table style="width: 100%;">
+				<tr>
+					<td>
+						<label>Họ</label>
+					</td>
+					<td>
+						<input type="text" id="lastName"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Tên</label>
+					</td>
+					<td>
+						<input type="text" id="firstName"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Số điện thoại</label>
+					</td>
+					<td>
+						<input type="tel" id="tel"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<label>Email</label>
+					</td>
+					<td>
+						<input type="email" id="email"/>
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Đăng ký" class="button" id="btnRegister"/>
+		</form>
+	</div>
+	<script src="../../Scripts/booking.js" type="text/javascript"></script>
+	if (flights.Count == 1)
+	{
+		<script type="text/javascript">
+			passOnewaypParam('@bookingType',
+						'@flights[0].From', '@flights[0].To', '@flights[0].FlightNo', '@flights[0].Date.ToShortDateString()'
+					);
+		</script>
+	}
+	else
+	{
+		<script type="text/javascript">
+			passRoundtripParam('@bookingType',
+						'@flights[0].From', '@flights[0].To', '@flights[0].FlightNo', '@flights[0].Date.ToShortDateString()',
+						'@flights[1].FlightNo', '@flights[1].Date.ToShortDateString()'
+					);
+		</script>
+	}
+}
+else
+{
+	<div>
+		Bạn phải chọn chuyến bay :)
+	</div>
+}
+
+

@@ -24,10 +24,24 @@ namespace BayReNhat.Controllers
             return View();
         }
 
+		[HttpPost]
 		public ActionResult Search(FlightSearchModel model)
 		{
-			
 			return View(model);
+		}
+
+		[HttpPost]
+		public JsonResult Booking(List<FlightModel> flights, string bookingType)
+		{
+			TempData["flights"] = flights;
+			TempData["BookingType"] = bookingType;
+			return Json(new {redirect = "booking"});
+		}
+
+		[HttpGet]
+		public ActionResult Booking()
+		{
+			return View();
 		}
     }
 }
