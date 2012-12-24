@@ -8,11 +8,11 @@ namespace Flights
 {
     class Flight
     {
-        private string _flightNo;
-        private string _airlineName;
-        private string _endTime;
-        private string _startTime;
-        private string _price;
+        private string _flightNo = "";
+        private string _airlineName = "";
+        private string _endTime = "";
+        private string _startTime = "";
+        private string _price = "";
 
         public string AirlineName
         {

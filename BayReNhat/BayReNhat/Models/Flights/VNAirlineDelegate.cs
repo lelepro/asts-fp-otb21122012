@@ -29,8 +29,14 @@ namespace Flights
  
         protected void Normalize(Parameters param)
         {
-            param.DepartMonth = _monthMap[param.DepartMonth];
-            param.ReturnMonth = _monthMap[param.ReturnMonth];
+            if (_monthMap.ContainsKey(param.DepartMonth))
+            {
+                param.DepartMonth = _monthMap[param.DepartMonth];
+            }
+            if (_monthMap.ContainsKey(param.ReturnMonth))
+            {
+                param.ReturnMonth = _monthMap[param.ReturnMonth];
+            }
         }
 
         protected List<Flight> ParseFlightTable(HtmlDocument document, string tableId)

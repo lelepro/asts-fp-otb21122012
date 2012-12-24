@@ -7,10 +7,10 @@ namespace Flights
 {
     class RegisterResult
     {
-        private string _totalFee;
-        private string _feeBeforeTax;
-        private string _tax;
-        private string _bookId;
+        private string _totalFee = "";
+        private string _feeBeforeTax = "";
+        private string _tax = "";
+        private string _bookId = "";
 
         public string TotalFee
         {
