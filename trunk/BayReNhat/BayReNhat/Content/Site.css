@@ -183,3 +183,8 @@ h2 {
 	width: 95%;
 	margin-left: 100%;
 }
+
+/*about*/
+.userGuide h2 {
+    color: black;
+}
