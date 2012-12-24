@@ -188,3 +188,8 @@ h2 {
 .userGuide h2 {
     color: black;
 }
+.step {
+	position: relative;
+	left: 660px;
+	top: -50px;
+}

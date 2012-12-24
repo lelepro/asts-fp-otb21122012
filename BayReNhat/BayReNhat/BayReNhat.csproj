@@ -295,10 +295,17 @@
     <Content Include="Images\0912021.JPG" />
     <Content Include="Images\0912041.jpg" />
     <Content Include="Images\airmekong_logo.png" />
+    <Content Include="Images\api1ex.png" />
+    <Content Include="Images\api2ex.png" />
+    <Content Include="Images\api3ex.png" />
     <Content Include="Images\jetstar_logo.png" />
     <Content Include="Images\loading24.gif" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\searching.gif" />
+    <Content Include="Images\searchResult.png" />
+    <Content Include="Images\step1.png" />
+    <Content Include="Images\step2.png" />
+    <Content Include="Images\step3.png" />
     <Content Include="Images\vnairline_logo.png" />
     <Content Include="Scripts\booking.js" />
     <Content Include="Scripts\index.js" />
